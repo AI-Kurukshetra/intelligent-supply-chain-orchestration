@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+.pnpm-store/
+coverage/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.venv/
+
+# Build artifacts
+.next/
+dist/
+build/
+.pybuild/
+
+# Docker
+*.log
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

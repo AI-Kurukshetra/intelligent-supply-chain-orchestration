@@ -1,0 +1,26 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "functions": {
+    "app/api/v1/demand/forecasts/runs/route.ts": { "maxDuration": 60 },
+    "app/api/v1/supply/mrp/runs/route.ts": { "maxDuration": 60 },
+    "app/api/v1/analytics/reports/[id]/route.ts": { "maxDuration": 60 },
+    "app/api/v1/collaboration/sop/[id]/meeting-pack/route.ts": { "maxDuration": 60 },
+    "app/api/v1/master/products/import/route.ts": { "maxDuration": 60 }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/webhooks/inngest", "destination": "/api/webhooks/inngest" }
+  ]
+}
